@@ -1,74 +1,84 @@
-<!DOCTYPE html> <!-- 定義文檔類型為 HTML5 -->
-<html lang="en"> <!-- 設置文檔語言為英語 -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>POPCAT CLASSIC</title> <!-- 網頁標題 -->
+    <title>POPCAT CLASSIC</title>
     <style>
-
-        body {
-
-            margin: 0; /* 移除默認邊距 */
-
-            padding: 0; /* 移除默認內邊距 */
-
-            display: flex; /* 使用彈性盒子布局 */
-
-            justify-content: center; /* 水平置中內容 */
-
-            align-items: flex-start; /* 垂直對齊到頂部 */
-
-            height: 100vh; /* 設置高度為視口高度的100% */
-
-            background-color: #bdaa90; /* 設置背景顏色 */
-
-        }
-
+        /*容器 box 高度100vh flex排版方向column 水平置中 不要垂直置中*/
         .container {
-
-            display: flex; /* 使用彈性盒子布局 */
-
-            flex-direction: column; /* 設置彈性方向為列 */
-
-            align-items: center; /* 水平置中內容 */
-
-            width: 100%; /* 設置寬度為100% */
-
-            height: 100vh; /* 設置高度為視口高度的100% */
-
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        /*容器樣式 背景顏色 #bdaa90*/
+        .container {
+            background-color: #bdaa90;
+        }
+        /*標題 box 寬度80% 上方間距 2em*/
+        .title {
+            width: 80%;
+            margin-top: 2em;
+        }
+        /*文字 box 寬度100%*/
+        .cat-img {
+            width: 100%;
+            font-size: 10em;
+            text-align: center;
+        }
+        /*文字樣式 文字置中 文字白色 大小80px -webkit-text-stroke 3px 黑色*/
+        .cat-img {
+            text-align: center;
+            color: white;
+            font-size: 80px;
+            -webkit-text-stroke: 3px black;
+        }
+        /*文字 div 背景圖片 用 id 設定imgs/p.png 圖片靠下 填滿容器contain 不重複*/
+        #p {
+            background-image: url('imgs/p.png');
+            background-position: bottom;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        /*body box 編距為0*/
+        body {
+            margin: 0;
+        }
+        /*文字 div 排版填滿剩餘空間*/
+        .cat-img {
+            flex-grow: 1;
+        }
+        /*字型 sans-serif*/
+        body {
+            font-family: sans-serif;
+        }
+        /*防止文字被選取*/
+        .cat-img {
+            user-select: none;
+        }
+        /*標題 box 最大寬度 600px*/
+        .title {
+            max-width: 600px;
+        }
+        /*文字 box 最大寬度 800px*/
+        .cat-img {
+            max-width: 800px;
+        }
+        /*新贈文字 div 背景圖片 用 id=op 設定 imgs/op.png*/
+        #op {
+            background-image: url('imgs/op.png');
+            background-position: bottom;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
-        .title-box {
-
-            width: 80%; /* 設置寬度為80% */
-
-            margin-top: 2em; /* 添加2em的上邊距 */
-
-        }
-
-        .text-box {
-
-            width: 100%; /* 設置寬度為100% */
-
-            text-align: center; /* 文字置中 */
-
-            color: white; /* 設置文字顏色為白色 */
-
-            font-size: 80px; /* 設置文字大小為80px */
-
-            -webkit-text-stroke: 3px black; /* 添加3px的黑色文字描邊 */
-
-            background: url('imgs/p.png') no-repeat bottom; /* 設置背景圖片，不重複，位置在底部 */
-
-            background-size: contain; /* 設置背景圖片大小為包含 */
-
-        }
     </style>
 </head>
 <body>
-<div class="container"> <!-- 容器div，用於包裹標題圖片和點擊數 -->
-    <div class="title-box"> <!-- 標題框，設置了寬度和邊距 -->
-        <img class="title" src="imgs/popcat.svg" alt="POPCAT"> <!-- 圖片，類名為'title'，替代文字為'POPCAT' -->
-    </div>
-    <div class="text-box" id="p">0</div> <!-- div，類名為'text-box'，ID為'p'，內容為數字0 -->
+<div class="container">
+
+    <img class="title" src="imgs/popcat.svg" alt="POPCAT">
+    <div class="cat-img" id="p">0</div>
+
 </div>
 </body>
 </html>
